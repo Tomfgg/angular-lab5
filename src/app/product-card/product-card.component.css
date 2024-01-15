@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+}
+.hh{
+    display: flex;
+    justify-content: center;
+}
+.hh > span{
+    margin: 5px;
+}

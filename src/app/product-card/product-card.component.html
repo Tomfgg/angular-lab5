@@ -1,0 +1,27 @@
+<body>
+<div class="card" style="width: 25rem;">
+    <!-- <a routerLink=""></a> -->
+    <img src="{{product.images[0]}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text"> {{product.price}} $ </p>
+        <p class="card-text"> {{product.description}}  </p>
+        <p class="card-text"> in stock: {{product.stock}} </p>
+        <p class="card-text"> rating:  {{product.rating}} </p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <!-- <div class="buttons"> -->
+        <!-- <button type="button" class="btn btn-primary">show details</button> -->
+        <!-- </div> -->
+    </div>
+    @if(!doesexist(product.id))
+    {<button type="button" (click)="add(product.id)" class="btn btn-success">add to cart</button>}
+    @else
+    {
+    <div class="hh">
+        <button type="button" (click)="this.productsservice.removefromcart(product.id)" class="btn btn-primary">-</button>
+        <span>{{this.findthis(product.id).count}}</span>
+        <button type="button" (click)="this.productsservice.addtocart(product.id)" class="btn btn-primary">+</button>
+    </div>
+    }
+</div>
+</body>

@@ -1,0 +1,17 @@
+td > img{
+    width: 100px;
+    width: 100px;
+}
+/* .in-de{
+    display: flex;
+} */
+.in-de > span{
+    margin: 5px;
+}
+.empty{
+    color: red;
+    text-align: center;
+}
+.card{
+    padding: 5px;
+}

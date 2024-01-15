@@ -1,0 +1,54 @@
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Your Shopping Cart</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">name</th>
+                        <th scope="col">price</th>
+                        <th scope="col">quantity</th>
+                        <th scope="col">total</th>
+                        <!-- <th scope="col">Actions</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example row, repeat this for each item in the cart -->
+                    @for(car of cart ; track $index)
+                    {
+                    <tr>
+                        <td><img src="{{car.images[0]}}"></td>
+                        <td>{{car.title}}</td>
+                        <td>{{car.price}}$</td>
+                        <td class="in-de">
+                            <!-- <input type="number" class="form-control" value="1"> -->
+                            <button type="button" (click)="remove(car.id)" class="btn btn-primary">-</button>
+                            <span>{{car.count}}</span>
+                            <button type="button" (click)="add(car.id)" class="btn btn-primary">+</button>
+                        </td>
+                        <td>{{car.total}}$</td>
+                        <!-- <td>
+                            <button class="btn btn-danger btn-sm">Remove</button>
+                        </td> -->
+                    </tr>
+                    }
+                    @empty {<h2 class="empty">your cart is empty</h2>}
+                    <!-- Repeat for other items -->
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+                    <p class="card-text">Total Items: <span id="totalItems">{{totalcount}}</span></p>
+                    <p class="card-text">Total Price: <span id="totalPrice">{{totalprice}}$</span></p>
+                    <button class="btn btn-primary btn-block">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,21 @@
+.card{
+    margin: 20px;
+}
+img{
+    height: 400px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 5px;
+}
+h5,p{
+    text-align: center;
+}
+.hh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
